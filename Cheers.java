@@ -17,6 +17,7 @@ Great work boaz!
 // Prints a crowd cheering output.
 // Prints a crowd cheering output.
 // Prints a crowd cheering output.
+// Prints a crowd cheering output.
 public class Cheers {
     public static void main(String[] args) {
         String word = args[0];
@@ -35,16 +36,18 @@ public class Cheers {
             }
         }
 
-        // blank line before the question
-        System.out.println();
+        // רק אם יש יותר מאות אחת – שורה ריקה לפני השאלה
+        if (upperWord.length() > 1) {
+            System.out.println();
+        }
+
         System.out.println("What does that spell?");
 
-        // blank line only if times > 1
+        // רק אם times > 1 – שורה ריקה אחרי השאלה
         if (times > 1) {
             System.out.println();
         }
 
-        // print the word multiple times
         for (int j = 0; j < times; j++) {
             System.out.println(upperWord + "!!!");
         }
