@@ -40,10 +40,14 @@ public class Cheers {
             }
         }
 
+        // בלי שורה ריקה בכלל כאן
         System.out.println("What does that spell?");
-
-        for (int j = 0; j < times; j++) {
-            System.out.println(upperWord + "!!!");
+        
+        // במקרה ש-times הוא 0, אסור להדפיס שום שורה נוספת
+        if (times > 0) {
+            for (int j = 0; j < times; j++) {
+                System.out.println(upperWord + "!!!");
+            }
         }
     }
 }
