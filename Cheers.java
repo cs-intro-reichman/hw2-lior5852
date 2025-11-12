@@ -8,43 +8,43 @@ Great work boaz!
 // Prints a crowd cheering output.
 public class Cheers {
         public static void main(String[] args) {
-   // נקבל את שני הקלטים מהפקודה
-        String word = args[0];               // לדוגמה RUNI
-        int times = Integer.parseInt(args[1]); // לדוגמה 5
 
-        // נהפוך את המילה לאותיות גדולות, ליתר ביטחון
+        // קלטים
+        String word = args[0];
+        int times = Integer.parseInt(args[1]);
+
+        // נוודא שהמילה באותיות גדולות
         word = word.toUpperCase();
 
-        // רשימת אותיות שדורשות "an" במקום "a"
+        // אותיות שצריכות "an"
         String lettersWithAn = "AEFHILMNORSX";
 
-        // נשתמש בלולאה כדי לעבור על כל אות במילה
+        // לולאה ראשונה: הדפסות Give me...
         int i = 0;
         while (i < word.length()) {
-            char currentChar = word.charAt(i);
+            char current = word.charAt(i);
 
-            // נבדוק אם האות הנוכחית נמצאת ברשימת האותיות שדורשות "an"
-            int index = lettersWithAn.indexOf(currentChar);
-
-            if (index != -1) {
-                // כלומר כן נמצאה – נשתמש ב-an
-                System.out.println("Give me an " + currentChar + ": " + currentChar + "!");
+            // נבדוק אם האות נמצאת ברשימת an
+            if (lettersWithAn.indexOf(current) != -1) {
+                System.out.println("Give me an " + current + ": " + current + "!");
             } else {
-                // אחרת נשתמש ב-a
-                System.out.println("Give me a " + currentChar + ": " + currentChar + "!");
+                System.out.println("Give me a " + current + ": " + current + "!");
             }
 
-            i = i + 1; // עוברים לאות הבאה
+            i = i + 1;
         }
 
-        // אחרי שסיימנו את כל האותיות
+        // 👇 שורה ריקה לפני "What does that spell?"
+        System.out.println();
+
         System.out.println("What does that spell?");
 
-        // נדפיס את המילה N פעמים
+        // לולאה שנייה: חזרה על המילה כמה פעמים
         int j = 0;
         while (j < times) {
             System.out.println(word + "!!!");
             j = j + 1;
-                }
+        }       
+
         }
 }
