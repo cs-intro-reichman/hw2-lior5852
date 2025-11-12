@@ -33,17 +33,18 @@ public class Cheers {
 
             if (lettersWithAn.indexOf(letter) != -1) {
                 System.out.println("Give me an " + letter + ": " + letter + "!");
-            } else if (letter == 'U') {
+            } 
+            else if (letter == 'U' || letter == 'C' || letter == 'O') {
+                // האותיות האלה דורשות שני רווחים אחרי ה-"a"
                 System.out.println("Give me a  " + letter + ": " + letter + "!");
-            } else {
+            } 
+            else {
                 System.out.println("Give me a " + letter + ": " + letter + "!");
             }
         }
 
-        // בלי שורה ריקה בכלל כאן
         System.out.println("What does that spell?");
         
-        // במקרה ש-times הוא 0, אסור להדפיס שום שורה נוספת
         if (times > 0) {
             for (int j = 0; j < times; j++) {
                 System.out.println(upperWord + "!!!");
