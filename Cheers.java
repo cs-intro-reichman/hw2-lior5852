@@ -13,40 +13,34 @@ Great work boaz!
 // Prints a crowd cheering output.
 
 // Prints a crowd cheering output.
+// Prints a crowd cheering output.
 public class Cheers {
     public static void main(String[] args) {
 
-        // קלטים
         String word = args[0];
         int times = Integer.parseInt(args[1]);
 
-        // כל האותיות מודפסות באותיות גדולות
         String upperWord = word.toUpperCase();
-
-        // האותיות שדורשות "an"
         String lettersWithAn = "AEFHILMNORSX";
 
-        // הדפסת שורות ה-"Give me..."
+        // "Give me ..." lines
         for (int i = 0; i < upperWord.length(); i++) {
             char letter = upperWord.charAt(i);
+            boolean useAn = (lettersWithAn.indexOf(letter) != -1);
 
-            if (lettersWithAn.indexOf(letter) != -1) {
+            if (useAn) {
                 System.out.println("Give me an " + letter + ": " + letter + "!");
             } else {
                 System.out.println("Give me a " + letter + ": " + letter + "!");
             }
         }
 
-        // שורה ריקה לפני השאלה
+        // exactly one blank line BEFORE the question
         System.out.println();
         System.out.println("What does that spell?");
 
-        // רק אם יש חזרות – שורה ריקה לפני ההדפסה
-        if (times > 0) {
-            System.out.println();
-        }
+        // ⚠️ NO blank line after the question (even if times > 0)
 
-        // הדפסת המילה באותיות גדולות times פעמים
         for (int j = 0; j < times; j++) {
             System.out.println(upperWord + "!!!");
         }
