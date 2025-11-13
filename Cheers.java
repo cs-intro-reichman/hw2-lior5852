@@ -33,20 +33,24 @@ public class Cheers {
         // Exactly the set required by the checker:
         String anLetters = "AEFHILMNORSX";
 
-        for (int i = 0; i < upper.length(); i++) {
-            char ch = upper.charAt(i);
+            for (int i = 0; i < upper.length(); i++) {
+    char currentChar = upper.charAt(i);
 
-            if (anLetters.indexOf(ch) != -1) {
-                // "an" case
-                System.out.println("Give me an " + ch + ": " + ch + "!");
-            } else if (ch == 'U') {
-                // special exact spacing: "a␠␠U"
-                System.out.println("Give me a  " + ch + ": " + ch + "!");
-            } else {
-                // regular "a" case
-                System.out.println("Give me a " + ch + ": " + ch + "!");
-            }
-        }
+    if (currentChar == 'A' || currentChar == 'E' || currentChar == 'F' ||
+        currentChar == 'H' || currentChar == 'I' || currentChar == 'L' ||
+        currentChar == 'M' || currentChar == 'N' || currentChar == 'O' ||
+        currentChar == 'R' || currentChar == 'S' || currentChar == 'X') {
+        
+        System.out.println("Give me an " + currentChar + ": " + currentChar + "!");
+
+    } else if (currentChar == 'U') {
+        // שמירה על הפורמט המיוחד: a␠␠U
+        System.out.println("Give me a  " + currentChar + ": " + currentChar + "!");
+
+    } else {
+        System.out.println("Give me a " + currentChar + ": " + currentChar + "!");
+    }
+}
 
         System.out.println("What does that spell?");
 
